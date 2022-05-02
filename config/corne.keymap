@@ -73,8 +73,8 @@
                         bindings = <
    &kp ESC  &kp C_RW &kp K_PREV &kp K_PP &kp K_NEXT &kp C_FF   &kp F1 &kp F2  &kp F3 &kp F4 &kp F5 &bt BT_CLR
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &kp K_VOL_DN   &trans   &trans   &trans   &bl BL_TOG  &bl BL_DEC  &bl BL_IN
+                                 &kp LS(LC(LA(LGUI)))  &kp LC(LS(LALT)) &kp C_AL_KEYBOARD_LAYOUT   &trans &trans  &trans
                         >;
                 };
         };
