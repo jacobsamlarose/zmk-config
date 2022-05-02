@@ -71,7 +71,7 @@
 // |     | BT1  | BT2   | BT3    | BT4       | VOL-   |   |       |       |       |BL_DEC |BL_INC | BL_TOG |
 //                      | HYPER  | MEH       | MYKEYB |   |  SPC  |  FN2  | FN3   |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+   &kp ESC  &kp C_RW &kp K_PREV &kp K_PP &kp K_NEXT &kp C_FF   &kp F1 &kp F2  &kp F3 &kp F4 &kp F5 &bt BT_CLR
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
