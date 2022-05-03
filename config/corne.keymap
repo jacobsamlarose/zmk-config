@@ -45,7 +45,7 @@
 //                    | ALT | CMD | CTL(ENT) |   | SPC | FN3 |  FN1 |
                         bindings = <
    &trans   &kp N1   &kp N2   &kp N3   &kp N4      &kp N5         &kp N6   &kp N7   &kp N8      &kp N9      &kp N0      &kp BSPC
-   &tog 1   &kp N4   &kp N5   &kp N6   &kp GRAVE   &kp MINUS      &none    &none    &none       &kp UP      &kp BSLH    &kp GRAVE
+   &tog 1   &kp N4   &kp N5   &kp N6   &kp SEMI    &kp MINUS      &none    &none    &none       &kp UP      &kp BSLH    &kp GRAVE
    &trans   &kp N7   &kp N8   &kp N9   &kp N0      &kp EQUAL      &none    &none    &kp LEFT    &kp DOWN    &kp RIGHT   &trans
                               &trans   &trans      &mt LCTRL RET  &trans   &mo 3    &trans
                         >;
