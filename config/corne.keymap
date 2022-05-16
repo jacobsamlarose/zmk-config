@@ -29,10 +29,6 @@
          };
      };
      
-     &caps_word {
-     	continue-list = <UNDERSCORE MINUS>;
-     };
-     
      behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
@@ -93,9 +89,9 @@
 // |       |       |       |       |       |        |   |       |       |       |       |       |        |
 //                         |       |       |        |   | POWR  |  FN2  | FN3   |
                         bindings = <
-   &none       &none    &none    &none    &none    &ext_power EP_OFF    &none              &none   &none   &none     &none     &none 
+   &none       &none    &none    &none    &none    &none                &none              &none   &none   &none     &none     &none 
    &none       &none    &none    &none    &none    &none                &none    	   &none   &none   &none     &none     &none 
-   &none       &none    &none    &none    &none    &none                &ext_power EP_OFF  &none   &none   &none     &none     &none 
+   &none       &none    &none    &none    &none    &ext_power EP_OFF     &ext_power EP_OFF  &none   &none   &none     &none     &none 
                                  &none    &none    &ext_power EP_ON     &ext_power EP_ON   &none   &none
                         >;
                 };
