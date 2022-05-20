@@ -19,6 +19,8 @@
 #define BT3 BT_SEL 3
 #define BT4 BT_SEL 4
 
+&led_strip { chain-length = <37>; };
+
 / {
     combos {
          compatible = "zmk,combos";
