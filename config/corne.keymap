@@ -58,7 +58,7 @@
          combo_unlock {
            timeout-ms = <2000>;
            key-positions = <0 11 24 35>;
-           bindings = <&tog 3>;
+           bindings = <&tog 4>;
          };
      };     
      
@@ -98,34 +98,49 @@
    &trans   &kp N1   &kp N2   &kp N3   &kp N4      &kp N5         &kp N6   &kp N7   &kp N8      &kp N9      &kp N0      &kp BSPC
    &tog 1   &kp N4   &kp N5   &kp N6   &kp SEMI    &kp MINUS      &none    &none    &none       &kp UP      &kp BSLH    &kp GRAVE
    &trans   &kp N7   &kp N8   &kp N9   &kp N0      &kp EQUAL      &none    &none    &kp LEFT    &kp DOWN    &kp RIGHT   &trans
-                              &trans   &trans      &mt LCTRL RET  &trans   &trans   &trans
+                              &trans   &trans      &mt LCTRL RET  &trans   &mo 3   &trans
                         >;
                 };
 
                 func_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC    | PRVS | RWND | PLAY  | MFFD    | NEXT    |   |  F1   |  F2   |  F3   | ( | ) | DEL    |
-// | BL_TOG |      |      |       | OUT_TOG | VOL+    |   |  F4   |  F5   |  F6   | [ | ] | BL_TOG | 
-// | BT1    | BT2  | BT3  | BT4   | BT_CLR  | VOL-    |   |  F7   |  F8   |  F9   | { | } | CAPS   |
-//                        | HYPER | MEH     | MYKEYB) |   | SPACE | FN2   | FN1   |
+// |        |      |      |       |         | VOL+    |   |  F4   |  F5   |  F6   | [ | ] |        | 
+// |        |      |      |       |         | VOL-    |   |  F7   |  F8   |  F9   | { | } | CAPS   |
+//                        | HYPER | MEH     | MYKEYB  |   | SPACE | FN2   | FN1   |
                         bindings = <
-   &kp ESC     &kp C_PREV  &kp C_RW   &kp C_PP    &kp C_FF         &kp C_NEXT     &kp F1   &kp F2   &kp F3   &kp LPAR    &kp RPAR    &kp DEL
-   &bl BL_TOG  &none       &none      &none       &out OUT_TOG     &kp C_VOL_UP   &kp F4   &kp F5   &kp F6   &kp LBKT    &kp RBKT    &rgb_ug RGB_TOG
-   &bt BT0     &bt BT1     &bt BT2    &bt BT3     &bt BT_CLR       &kp C_VOL_DN   &kp F7   &kp F8   &kp F9   &kp LBRC    &kp RBRC    &kp CAPS
-			&kp LS(LC(LA(LGUI)))  &kp LC(LS(LALT))  &kp C_AL_KEYBOARD_LAYOUT   &trans  &trans &trans
+   &kp ESC  &kp C_PREV  &kp C_RW   &kp C_PP   &kp C_FF    &kp C_NEXT     &kp F1   &kp F2   &kp F3   &kp LPAR    &kp RPAR    &kp DEL
+   &none    &none       &none      &none      &none       &kp C_VOL_UP   &kp F4   &kp F5   &kp F6   &kp LBKT    &kp RBKT    &none
+   &none    &none       &none      &none      &none       &kp C_VOL_DN   &kp F7   &kp F8   &kp F9   &kp LBRC    &kp RBRC    &kp CAPS
+			&kp LS(LC(LA(LGUI)))  &kp LC(LS(LALT))  &kp C_AL_KEYBOARD_LAYOUT   &trans  &trans &mo 3
                         >;
                 };
-				media_layer {
+		
+		board_layer {
+// -----------------------------------------------------------------------------------------
+// | BT_CLR  | BT1   | BT2   | BT3   | BT4   | BT5     |   |         |       |       |       |       |        |
+// | RGB_TOG | BRI + | HUE + | SAT + | EFF + | OUT_TOG |   |         |       |       |       |       |        |
+// |         | BRI - | HUE - | SAT - | EFF - | PWR_OFF |   | PWR_OFF |       |       |       |       |        |
+//                           |       |       | PWR_ON  |   | PWR_ON  |       |       |
+                        bindings = <
+   &bt BT_CLR       &bt BT0          &bt BT1          &bt BT2          &bt BT3          &bt BT4            &none              &none   &none   &none     &none     &none 
+   &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &out OUT_TOG       &none    	      &none   &none   &none     &none     &none 
+   &none            &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_EFR  &ext_power EP_OFF  &ext_power EP_OFF  &none   &none   &none     &none     &none 
+                                                      &none            &none            &ext_power EP_ON   &ext_power EP_ON   &none   &none
+                        >;
+                };
+		
+				travel_layer {
 // -----------------------------------------------------------------------------------------
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
-// |       |       |       |       |       | PWR_OFF |   | PWR_OFF |       |       |       |       |        |
-//                         |       |       | PWR_ON  |   | PWR_ON  |       |       |
+// |       |       |       |       |       |         |   |         |       |       |       |       |        |
+//                         |       |       |         |   |         |       |       |
                         bindings = <
-   &none       &none    &none    &none    &none    &none                &none              &none   &none   &none     &none     &none 
-   &none       &none    &none    &none    &none    &none                &none    	   &none   &none   &none     &none     &none 
-   &none       &none    &none    &none    &none    &ext_power EP_OFF     &ext_power EP_OFF  &none   &none   &none     &none     &none 
-                                 &none    &none    &ext_power EP_ON     &ext_power EP_ON   &none   &none
+   &none       &none    &none    &none    &none    &none        &none   &none   &none   &none     &none     &none 
+   &none       &none    &none    &none    &none    &none        &none   &none   &none   &none     &none     &none 
+   &none       &none    &none    &none    &none    &none     	&none   &none   &none   &none     &none     &none 
+                                 &none    &none    &none     	&none   &none   &none
                         >;
                 };
         };
