@@ -60,7 +60,22 @@
            key-positions = <0 11 24 35>;
            bindings = <&tog 4>;
          };
-     };     
+	 
+	 combo_equals_l {
+           timeout-ms = <2000>;
+           key-positions = <24 29>;
+	   layers = <1>
+           bindings = <&KP_EQUAL>;
+         };
+     };
+     
+     	 combo_equals_r {
+           timeout-ms = <2000>;
+           key-positions = <35 29>;
+	   layers = <1>
+           bindings = <&KP_EQUAL>;
+         };
+     };
      
      behaviors {
         td0: tap_dance_0 {
@@ -97,7 +112,7 @@
                         bindings = <
    &trans   &kp N1   &kp N2   &kp N3   &kp N4      &kp N5         &kp N6   &kp N7   &kp N8      &kp N9      &kp N0      &kp BSPC
    &tog 1   &kp N4   &kp N5   &kp N6   &kp SEMI    &kp MINUS      &none    &none    &none       &kp UP      &kp BSLH    &kp GRAVE
-   &trans   &kp N7   &kp N8   &kp N9   &kp N0      &kp EQUAL      &none    &none    &kp LEFT    &kp DOWN    &kp RIGHT   &trans
+   &trans   &kp N7   &kp N8   &kp N9   &kp N0      &kp PLUS      &none    &none    &kp LEFT    &kp DOWN    &kp RIGHT   &trans
                               &trans   &trans      &mt LCTRL RET  &trans   &mo 3   &trans
                         >;
                 };
