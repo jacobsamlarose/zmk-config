@@ -67,7 +67,6 @@
 	   layers = <1>;
            bindings = <&kp KP_EQUAL>;
          };
-     };
      
      	 combo_equals_r {
            timeout-ms = <2000>;
