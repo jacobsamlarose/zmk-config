@@ -50,11 +50,11 @@
 	};
 };
 
-/ {
-
     &caps_word {
         continue-list = <UNDERSCORE MINUS SPACE>;
     };
+
+/ {
 
     combos {
          compatible = "zmk,combos";
