@@ -5,9 +5,6 @@ manifest:
     - name: jacobsamlarose
       url-base: https://github.com/jacobsamlarose
   projects:
-    - name: zephyr
-      remote: jacobsamlarose
-      revision: v3.0.0+zmk-fixes
     - name: zmk
       remote: jacobsamlarose
       revision: main
