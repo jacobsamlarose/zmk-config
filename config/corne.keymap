@@ -18,6 +18,7 @@
 #define BT2 BT_SEL 2
 #define BT3 BT_SEL 3
 #define BT4 BT_SEL 4
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
 
 &spi1 {
@@ -97,6 +98,15 @@
             tapping-term-ms = <500>;
             bindings = <&kp LGUI>, <&sk LG(LS(LA(LCTRL)))>;
         };
+	
+	mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_tog";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
     };
 
         keymap {
@@ -112,7 +122,7 @@
    &kp TAB     &kp Q    &kp W    &kp E       &kp R      &kp T          &kp Y       &kp U    &kp I       &kp O    &kp P     &kp BSPC
    &kp CAPS    &kp A    &kp S    &kp D       &kp F      &kp G          &kp H       &kp J    &kp K       &kp L    &kp SEMI  &kp SQT
    &kp LSHFT   &kp Z    &kp X    &kp C       &kp V      &kp B          &kp N       &kp M    &kp COMMA   &kp DOT  &kp FSLH  &td0
-                                 &kp LALT    &guihyp    &mt LCTRL RET  &kp SPACE   &mo 2    &mo 1
+                                 &kp LALT    &guihyp    &mt LCTRL RET  &kp SPACE   &mo 2    MO_TOG(1)
                         >;
                 };
                 num_layer {
@@ -125,7 +135,7 @@
    &trans      &kp N1   &kp N2   &kp N3   &kp N4      &kp N5         &kp N6   &kp N7   &kp N8      &kp N9      &kp N0      &kp BSPC
    &kp C_EJECT &kp N4   &kp N5   &kp N6   &kp SEMI    &kp MINUS      &none    &none    &none       &kp UP      &kp BSLH    &kp GRAVE
    &trans      &kp N7   &kp N8   &kp N9   &kp N0      &kp PLUS       &none    &none    &kp LEFT    &kp DOWN    &kp RIGHT   &trans
-                                 &trans   &trans      &mt LCTRL RET  &trans   &mo 3    &trans
+                                 &trans   &trans      &mt LCTRL RET  &trans   MO_TOG(3)    &trans
                         >;
                 };
 
@@ -137,9 +147,9 @@
 //                      | HYPER |  MEH   | MYKEYB  |   | SPACE | FN2   | FN1   |
                         bindings = <
    &kp ESC     &kp KP_N7  &kp KP_N8   &kp KP_N9   &none    	&none         &kp F1  &kp F2   &kp F3   &kp LPAR    &kp RPAR    &kp DEL
-   &tog 1       &kp KP_N4  &kp KP_N5   &kp KP_N6   &none      	&none         &kp F4  &kp F5   &kp F6   &kp LBKT    &kp RBKT    &none
-   &kp KP_DOT  &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_N0   	&none         &kp F7  &kp F8   &kp F9   &kp LBRC    &kp RBRC    &tog 1
-			&kp LS(LC(LA(LGUI)))   &kp LC(LS(LALT)) &kp C_EJECT   &trans  &trans   &mo 3
+   &none       &kp KP_N4  &kp KP_N5   &kp KP_N6   &none      	&none         &kp F4  &kp F5   &kp F6   &kp LBKT    &kp RBKT    &none
+   &kp KP_DOT  &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_N0   	&none         &kp F7  &kp F8   &kp F9   &kp LBRC    &kp RBRC    &none
+			&kp LS(LC(LA(LGUI)))   &kp LC(LS(LALT)) &kp C_EJECT   &trans  &trans   MO_TOG(3)
                         >;
                 };
 		
