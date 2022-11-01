@@ -92,10 +92,10 @@
 	
         guihyp: gui_hyper {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
+            label = "GUI_HYPER";
             #binding-cells = <0>;
             tapping-term-ms = <500>;
-            bindings = &kp LGUI, <&sk LG(LS(LA(LCTRL)))>;
+            bindings = <&kp LGUI>, <&sk LG(LS(LA(LCTRL)))>;
         };
     };
 
