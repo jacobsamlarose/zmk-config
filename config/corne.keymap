@@ -97,7 +97,7 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |    T     |   |  Y  |  U   |  I  |  O  |  P  | BKSP      |
-// |  TG1 |  A  |  S  |  D  |  F  |    G     |   |  H  |  J   |  K  |  L  |  ;  |  '        |
+// | CAPS |  A  |  S  |  D  |  F  |    G     |   |  H  |  J   |  K  |  L  |  ;  |  '        |
 // | SHFT |  Z  |  X  |  C  |  V  |    B     |   |  N  |  M   |  ,  |  .  |  /  | SHFT/CAPW |
 //                    | ALT | CMD | CTL(ENT) |   | SPC | FN2  | FN1 |
                         bindings = <
@@ -109,10 +109,10 @@
                 };
                 num_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |    5     |   |  6  |  7  |  8   |   9  |   0   | BKSP      |
-// |  TG1 |  4  |  5  |  6  |  `  |    -     |   |     |     |      |  UP  |   \   |   `       |
-// | SHFT |  7  |  8  |  9  |  0  |    =     |   |     |     | LEFT | DOWN | RIGHT | SHFT/CAPW |
-//                    | ALT | CMD | CTL(ENT) |   | SPC | FN3 |  FN1 |
+// |   TAB |  1  |  2  |  3  |  4  |    5     |   |  6  |  7  |  8   |   9  |   0   | BKSP      |
+// | EJECT |  4  |  5  |  6  |  `  |    -     |   |     |     |      |  UP  |   \   |   `       |
+// |  SHFT |  7  |  8  |  9  |  0  |    =     |   |     |     | LEFT | DOWN | RIGHT | SHFT/CAPW |
+//                     | ALT | CMD | CTL(ENT) |   | SPC | FN3 |  FN1 |
                         bindings = <
    &trans      &kp N1   &kp N2   &kp N3   &kp N4      &kp N5         &kp N6   &kp N7   &kp N8      &kp N9      &kp N0      &kp BSPC
    &kp C_EJECT &kp N4   &kp N5   &kp N6   &kp SEMI    &kp MINUS      &none    &none    &none       &kp UP      &kp BSLH    &kp GRAVE
@@ -124,8 +124,8 @@
                 func_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC  |  7   |  8   |  9    |        |         |   |  F1   |  F2   |  F3   | ( | ) | DEL    |
-// |      |  4   |  5   |  6    |        |         |   |  F4   |  F5   |  F6   | [ | ] |        | 
-// |  .   |  1   |  2   |  3    |  0     |         |   |  F7   |  F8   |  F9   | { | } | CAPS   |
+// | TOG1 |  4   |  5   |  6    |        |         |   |  F4   |  F5   |  F6   | [ | ] |        | 
+// |  .   |  1   |  2   |  3    |  0     |         |   |  F7   |  F8   |  F9   | { | } | TOG1   |
 //                      | HYPER |  MEH   | MYKEYB  |   | SPACE | FN2   | FN1   |
                         bindings = <
    &kp ESC     &kp KP_N7  &kp KP_N8   &kp KP_N9   &none    	&none         &kp F1  &kp F2   &kp F3   &kp LPAR    &kp RPAR    &kp DEL
@@ -154,7 +154,7 @@
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
-//                         |       |       |         |   |         |       |       |
+//                         |       |       | SUSPEND |   | SUSPEND |       |       |
                         bindings = <
    &none       &none    &none    &none    &none    &none        &none      &none   &none   &none     &none     &none 
    &none       &none    &none    &none    &none    &none        &none      &none   &none   &none     &none     &none 
