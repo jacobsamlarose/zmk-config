@@ -88,19 +88,19 @@
          };
          
          combo_tog2 {
-           timeout-ms = <1000>;
+           timeout-ms = <500>;
            key-positions = <39 40>;
            bindings = <&tog 1>;
          };
          
          combo_tog3 {
-           timeout-ms = <1000>;
+           timeout-ms = <800>;
            key-positions = <39 40 41>;
            bindings = <&tog 3>;
          };
          
          combo_hyper {
-           timeout-ms = <1500>;
+           timeout-ms = <800>;
            key-positions = <19 20 21>;
            bindings = <&sk LG(LS(LA(LCTRL)))>;
          };
@@ -146,7 +146,7 @@
    &kp TAB     &kp Q    &kp W    &kp E       &kp R      &kp T          &kp Y       &kp U    &kp I       &kp O    &kp P     &kp BSPC
    &kp CAPS    &kp A    &kp S    &kp D       &kp F      &kp G          &kp H       &kp J    &kp K       &kp L    &kp SEMI  &kp SQT
    &kp LSHFT   &kp Z    &kp X    &kp C       &kp V      &kp B          &kp N       &kp M    &kp COMMA   &kp DOT  &kp FSLH  &td0
-                                 &kp LALT    &guihyp    &mt LCTRL RET  &kp SPACE   &mo 2    &mo 1
+                                 &kp LALT    &kp LGUI   &mt LCTRL RET  &kp SPACE   &mo 2    &mo 1
                         >;
                 };
                 num_layer {
