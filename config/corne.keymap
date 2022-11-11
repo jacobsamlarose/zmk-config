@@ -18,7 +18,7 @@
 #define BT2 BT_SEL 2
 #define BT3 BT_SEL 3
 #define BT4 BT_SEL 4
-#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+// #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
 
 &spi1 {
@@ -67,18 +67,42 @@
            bindings = <&tog 4>;
          };
 	 
-	 combo_equals_l {
+		 combo_equals_l {
            timeout-ms = <2000>;
            key-positions = <24 29>;
-	   layers = <1>;
+		   layers = <1>;
            bindings = <&kp KP_EQUAL>;
          };
      
      	 combo_equals_r {
            timeout-ms = <2000>;
            key-positions = <35 29>;
-	   layers = <1>;
+           layers = <1>;
            bindings = <&kp KP_EQUAL>;
+         };
+         
+         combo_tog1 {
+           timeout-ms = <500>;
+           key-positions = <39 41>;
+           bindings = <&tog 1>;
+         };
+         
+         combo_tog2 {
+           timeout-ms = <1000>;
+           key-positions = <39 40>;
+           bindings = <&tog 1>;
+         };
+         
+         combo_tog3 {
+           timeout-ms = <1000>;
+           key-positions = <39 40 41>;
+           bindings = <&tog 3>;
+         };
+         
+         combo_hyper {
+           timeout-ms = <1500>;
+           key-positions = <19 20 21>;
+           bindings = <&sk LG(LS(LA(LCTRL)))>;
          };
      };
      
@@ -91,22 +115,22 @@
             bindings = <&kp RSHFT>, <&caps_word>;
         };
 	
-        guihyp: gui_hyper {
-            compatible = "zmk,behavior-tap-dance";
-            label = "GUI_HYPER";
-            #binding-cells = <0>;
-            tapping-term-ms = <500>;
-            bindings = <&kp LGUI>, <&sk LG(LS(LA(LCTRL)))>;
-        };
+       // guihyp: gui_hyper {
+       //     compatible = "zmk,behavior-tap-dance";
+       //     label = "GUI_HYPER";
+       //     #binding-cells = <0>;
+       //     tapping-term-ms = <500>;
+       //     bindings = <&kp LGUI>, <&sk LG(LS(LA(LCTRL)))>;
+       // };
 	
-	mo_tog: behavior_mo_tog {
-            compatible = "zmk,behavior-hold-tap";
-            label = "mo_tog";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&tog>;
-        };
+	// mo_tog: behavior_mo_tog {
+    //        compatible = "zmk,behavior-hold-tap";
+    //        label = "mo_tog";
+    //        #binding-cells = <2>;
+    //        flavor = "hold-preferred";
+    //        tapping-term-ms = <200>;
+    //        bindings = <&mo>, <&tog>;
+    //    };
     };
 
         keymap {
@@ -122,7 +146,7 @@
    &kp TAB     &kp Q    &kp W    &kp E       &kp R      &kp T          &kp Y       &kp U    &kp I       &kp O    &kp P     &kp BSPC
    &kp CAPS    &kp A    &kp S    &kp D       &kp F      &kp G          &kp H       &kp J    &kp K       &kp L    &kp SEMI  &kp SQT
    &kp LSHFT   &kp Z    &kp X    &kp C       &kp V      &kp B          &kp N       &kp M    &kp COMMA   &kp DOT  &kp FSLH  &td0
-                                 &kp LALT    &guihyp    &mt LCTRL RET  &kp SPACE   &mo 2    MO_TOG(1)
+                                 &kp LALT    &guihyp    &mt LCTRL RET  &kp SPACE   &mo 2    &mo 1
                         >;
                 };
                 num_layer {
@@ -155,15 +179,15 @@
 		
 		board_layer {
 // -----------------------------------------------------------------------------------------
-// | ESC     | PRVS  | RWND  | PLAY  | MFFD    | NEXT    |   | BT1     | BT2   | BT3   | BT4   | BT5   | BT_CLR  |
-// | RGB_TOG | BRI + | HUE + | SAT + | EFF +   | VOL+    |   |         |       |       |       |       | OUT_TOG |
-// |         | BRI - | HUE - | SAT - | EFF -   | VOL-    |   |         |       |       |       |       |         |
-//                           |       | PWR_OFF | PWR_ON  |   | PWR_ON  |       |       |
+// | ESC     | PRVS  | RWND  | PLAY  	| MFFD    | NEXT    |   | BT1     | BT2   | BT3   | BT4   | BT5   | BT_CLR  |
+// | RGB_TOG | BRI + | HUE + | SAT + 	| EFF +   | VOL+    |   |         |       |       |       |       | OUT_TOG |
+// |         | BRI - | HUE - | SAT - 	| EFF -   | VOL-    |   |   	  |       |       |       |       |         |
+//                           | PWR_OFF  | PWR_OFF | PWR_TOG	| 	| 		  |       |       |
                         bindings = <
-   &kp ESC          &kp C_PREV       &kp C_RW         &kp C_PP          &kp C_FF    	   &kp C_NEXT          &bt BT0            &bt BT1  &bt BT2   &bt BT3   &bt BT4   &bt BT_CLR 
-   &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI   &rgb_ug RGB_EFF    &kp C_VOL_UP        &none              &none    &none     &none     &none     &out OUT_TOG 
-   &none            &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD   &rgb_ug RGB_EFR    &kp C_VOL_DN        &none              &none    &none     &none     &none 
-                                                      &none  		&ext_power EP_OFF  &ext_power EP_ON    &ext_power EP_TOG  &trans   &trans
+   &kp ESC          &kp C_PREV       &kp C_RW         &kp C_PP          &kp C_FF			&kp C_NEXT			&bt BT0     &bt BT1  &bt BT2   &bt BT3   &bt BT4	&bt BT_CLR 
+   &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI   &rgb_ug RGB_EFF		&kp C_VOL_UP		&none       &none    &none     &none     &none		&out OUT_TOG 
+   &none            &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD   &rgb_ug RGB_EFR		&kp C_VOL_DN		&none       &none    &none     &none     &none		&none
+                                                      &ext_power EP_OFF &ext_power EP_ON	&ext_power EP_TOG  	&none		&trans   &trans
                         >;
                 };
 		
