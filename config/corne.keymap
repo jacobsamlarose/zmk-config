@@ -101,7 +101,7 @@
          
          combo_hyper {
            timeout-ms = <800>;
-           key-positions = <19 20 21>;
+           key-positions = <20 21 22>;
            bindings = <&sk LG(LS(LA(LCTRL)))>;
          };
      };
