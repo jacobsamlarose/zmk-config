@@ -58,14 +58,11 @@
 / {
 
     macros {
-        combo_the: combo_the {
-            label = "ZM_combo_the";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp T &kp H &kp E>
-                ;
-        };
+        ZMK_MACRO(combo_the,
+        	wait-ms = <30>;
+        	tap-ms = <40>;
+        	bindings = <&kp T &kp H &kp E>;
+    	)
     };
 
     combos {
