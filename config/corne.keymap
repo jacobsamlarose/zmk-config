@@ -63,6 +63,18 @@
         	tap-ms = <40>;
         	bindings = <&kp T &kp H &kp E>;
     	)
+	
+	ZMK_MACRO(combo_and,
+        	wait-ms = <30>;
+        	tap-ms = <40>;
+        	bindings = <&kp A &kp N &kp D>;
+    	)
+	
+	ZMK_MACRO(combo_you,
+        	wait-ms = <30>;
+        	tap-ms = <40>;
+        	bindings = <&kp Y &kp O &kp U>;
+    	)
     };
 
     combos {
@@ -220,9 +232,9 @@
 // |  .   |  1   |  2   |  3    |  0     |         |   |  F7   |  F8   |  F9   | { | } | TOG1   |
 //                      | HYPER |  MEH   | MYKEYB  |   | SPACE | FN2   | FN1   |
                         bindings = <
-   &kp ESC     &kp KP_N7  &kp KP_N8   &kp KP_N9   &none    	&combo_the    &kp F1  &kp F2   &kp F3   &kp LPAR    &kp RPAR    &kp DEL
-   &none       &kp KP_N4  &kp KP_N5   &kp KP_N6   &none      	&none         &kp F4  &kp F5   &kp F6   &kp LBKT    &kp RBKT    &none
-   &kp KP_DOT  &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_N0   	&none         &kp F7  &kp F8   &kp F9   &kp LBRC    &kp RBRC    &none
+   &kp ESC     &none  	   &none   &none   &none    &combo_the    &none  &none   &none   &none    &none    &none
+   &none       &combo_and  &none   &none   &none    &none         &none  &none   &none   &none    &none    &none
+   &kp KP_DOT  &none  	   &none   &none   &none    &none         &none  &none   &none   &none    &none    &none
 			&kp LS(LC(LA(LGUI)))   &kp LC(LS(LALT)) &kp C_EJECT   &trans  &trans   &mo 3
                         >;
                 };
