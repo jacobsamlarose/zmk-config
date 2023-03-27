@@ -87,6 +87,12 @@
            bindings = <&tog 4>;
          };
 	 
+	 combo_showkb {
+           timeout-ms = <2000>;
+           key-positions = <12 37>;
+           bindings = <&kp C_EJECT>;
+         };
+	 	 
 		 combo_equals_l {
            timeout-ms = <2000>;
            key-positions = <24 29>;
