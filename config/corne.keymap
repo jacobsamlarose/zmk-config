@@ -286,12 +286,12 @@
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
 // |       |       |       |       |       |         |   |         |       |       |       |       |        |
-//                         |       |       | SUSPEND |   | SUSPEND |       |       |
+//                         |       |       | &SUSPEND |   | &SUSPEND |       |       |
                         bindings = <
    &none       &none    &none    &none    &none    &none        &none      &none   &none   &none     &none     &none 
    &none       &none    &none    &none    &none    &none        &none      &none   &none   &none     &none     &none 
    &none       &none    &none    &none    &none    &none     	&none      &none   &none   &none     &none     &none 
-                                 &none    &none    &suspend     &suspend   &none   &none
+                                 &none    &none    &none        &none   &none   &none
                         >;
                 };
         };
