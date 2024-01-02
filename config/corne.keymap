@@ -13,7 +13,7 @@
 #include <dt-bindings/zmk/rgb.h>
 // include <dt-bindings/led/led.h>
 
-/*           40 Keys (Note: fro the Fifi, I just ignore the outer columns)
+/*           40 Keys (Note: for the Fifi, I just ignore the outer columns)
 ╭─────────────────╮ ╭─────────────────╮
 │ 0  1  2  3  4  5│ │ 6  7  8  9 10 11│
 │12 13 14 15 16 17│ │18 19 20 21 22 23│
@@ -171,13 +171,6 @@
 	   bindings = <&kp SQT>;
 	 };
 
-	combo_skshf {
-           timeout-ms = <300>;
-           layers = <0>;
-           key-positions = <31 32>;
-           bindings = <&sk RSHFT>;
-         };
-
 	combo_pgup {
 	   timeout-ms = <50>;
 	   layers = <1>;
@@ -208,21 +201,21 @@
 
 	combo_fwd {
 	   timeout-ms = <50>;
-	   layers = <1>;
+	   layers = <2>;
 	   key-positions = <8 9>;
 	   bindings = <&kp C_FF>;
 	 };
 
 	combo_rwd {
 	   timeout-ms = <50>;
-	   layers = <1>;
+	   layers = <2>;
 	   key-positions = <7 8>;
 	   bindings = <&kp C_RW>;
 	 };
 
 	combo_play {
 	   timeout-ms = <50>;
-	   layers = <1>;
+	   layers = <2>;
 	   key-positions = <7 8 9>;
 	   bindings = <&kp C_PP>;
 	 };
