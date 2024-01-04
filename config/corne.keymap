@@ -61,17 +61,24 @@
         combo_mo3 {
            timeout-ms = <300>;
            key-positions = <39 40 41>;
-	   layers = <0 1 2 3>;
+	   layers = <0 1 2 3 4>;
            bindings = <&mo 3>;
          };
 
 	combo_mo4 {
            timeout-ms = <300>;
            key-positions = <30 39>;
-	   layers = <0 1 2 3>;
+	   layers = <0 1 2 3 4>;
            bindings = <&mo 4>;
          };
-      
+
+	combo_mo5 {
+           timeout-ms = <300>;
+           key-positions = <18 39>;
+	   layers = <0 1 2 3 4>;
+           bindings = <&mo 5>;
+         };
+
 	combo_lpar {
            timeout-ms = <100>;
            key-positions = <4 5>;
@@ -139,64 +146,15 @@
 	combo_apos {
 	   timeout-ms = <50>;
 	   layers = <0>;
-	   key-positions = <8 20>;
+	   key-positions = <20 21>;
 	   bindings = <&kp SQT>;
 	 };
 
 	combo_altapos {
 	   timeout-ms = <50>;
 	   layers = <0>;
-	   key-positions = <9 21>;
-	   bindings = <&kp SQT>;
-	 };
-
-	combo_pgup {
-	   timeout-ms = <50>;
-	   layers = <1>;
-	   key-positions = <8 20>;
-	   bindings = <&kp PG_UP>;
-	 };
-
-	combo_pgdn {
-	   timeout-ms = <50>;
-	   layers = <1>;
 	   key-positions = <20 32>;
-	   bindings = <&kp PG_DN>;
-	 };
-
-	combo_home {
-	   timeout-ms = <50>;
-	   layers = <1>;
-	   key-positions = <19 20>;
-	   bindings = <&kp HOME>;
-	 };
-
-	combo_end {
-	   timeout-ms = <50>;
-	   layers = <1>;
-	   key-positions = <20 21>;
-	   bindings = <&kp END>;
-	 };
-
-	combo_fwd {
-	   timeout-ms = <50>;
-	   layers = <2>;
-	   key-positions = <8 9>;
-	   bindings = <&kp C_FF>;
-	 };
-
-	combo_rwd {
-	   timeout-ms = <50>;
-	   layers = <2>;
-	   key-positions = <7 8>;
-	   bindings = <&kp C_RW>;
-	 };
-
-	combo_play {
-	   timeout-ms = <50>;
-	   layers = <2>;
-	   key-positions = <7 8 9>;
-	   bindings = <&kp C_PP>;
+	   bindings = <&kp SQT>;
 	 };
 
      };
@@ -301,39 +259,28 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |   |  Q  |  W  |  E  |  R       |    T     |   |  Y  |  U   |  I  |  O  |  P    |    |
-// |   |  A  |  S  |  D  |  F       |    G     |   |  H  |  J   |  K  |  L  |  /    |    |
-// |   |  Z  |  X  |  C  |  V       |    B     |   |  N  |  M   |  ,  |  .  |  SHFT |    |
-//                    | ALT (ESC) | CMD (TAB) | CTL(ENT) |   | SPC | FN2  | FN1 |
+
                         bindings = <
-   &none   &kp Q    		&kp W    	&kp E       	&kp R      	&kp T          		&kp Y   	&kp U    	&kp I       	&kp O    	&kp P     	   	&none
-   &none   &hm LSHIFT A    	&kp S    	&ht_hl 1 D     	&hm LGUI F      &kp G          		&kp H   	&kp J    	&kp K       	&kp L    	&kp FSLH  	   	&none
-   &none   &hm LSHIFT Z    	&kp X    	&kp C       	&kp V      	&kp B          		&kp N   	&kp M    	&kp COMMA   	&kp DOT  	&sk RSHFT   		&none
+   &none   &kp Q    		&kp W    	&kp E       	&kp R      	&kp T          		&kp Y   	&kp U    	&kp I       	&kp O    	&kp P 		&none
+   &none   &hm LSHIFT A    	&kp S    	&ht_hl 1 D     	&hm LGUI F      &kp G          		&kp H   	&kp J    	&kp K       	&kp L    	&kp FSLH  	&none
+   &none   &hm LSHIFT Z    	&kp X    	&kp C       	&kp V      	&kp B          		&kp N   	&kp M    	&kp COMMA   	&kp DOT  	&sk RSHFT   	&none
                                 		&td_esc	   	&mt LGUI TAB  	&mt LCTRL RET  		&lt 2 SPACE	&lt 1 TAB	&kp CAPS 
                         >;
                 };
-                nav_layer {
-// -----------------------------------------------------------------------------------------
-// |   TAB |  1  |  2  |  3  |  4  |    5     |   |  6  |  7  |  8   |   9  |   0   | BKSP      |
-// | EJECT |  4  |  5  |  6  |  `  |    -     |   |     |     |      |  UP  |   \   |   `       |
-// |  SHFT |  7  |  8  |  9  |  0  |    =     |   |     |     | LEFT | DOWN | RIGHT | SHFT/CAPW |
-//                     | ALT | CMD | CTL(ENT) |   | SPC | FN3 |  FN1 |
+
+		nav_layer {
+
                         bindings = <
-   &none   &kp TILDE  		&kp EXCL	&kp AT   	&kp LA(N3)     	&kp LA(EQUAL)		&kp C_BRI_UP	&kp C_VOL_UP	&none	        &none		&none   		&none    
-   &none   &kp PIPE		&kp DLLR	&kp PRCNT  	&kp CARET   	&kp LA(MINUS)	  	&kp C_BRI_DN	&kp C_VOL_DN	&kp UP		&none		&none			&none       	
-   &none   &hm LSHIFT GRAVE 	&kp AMPS  	&kp STAR	&kp CAPS	&kp DOT			&kp BSLH	&kp LEFT    	&kp DOWN	&kp RIGHT	&sk RSHFT		&none
+   &none   &kp TILDE  		&kp EXCL	&kp AT   	&kp LA(N3)     	&kp LA(EQUAL)		&none		&none		&none	        &none		&none   	&none    
+   &none   &kp PIPE		&kp DLLR	&kp PRCNT  	&kp CARET   	&kp LA(MINUS)		&none 		&kp HOME	&kp UP		&kp END		&none		&none       	
+   &none   &hm LSHIFT GRAVE 	&kp AMPS  	&kp STAR	&kp CAPS	&kp DOT			&none		&kp LEFT    	&kp DOWN	&kp RIGHT	&sk RSHFT	&none
                                 		&trans  	&trans		&trans			&trans   	&trans   	&kp C_EJECT
                         >;
                 };
 
 		num_layer {
-// -----------------------------------------------------------------------------------------
-// |    |  1  |  2  |  3  |  4  |    5     |   |  6  |  7  |  8   |   9  |   0   | BKSP      |
-// |    |  4  |  5  |  6  |  `  |    -     |   |     |     |      |  UP  |   \   |   `       |
-// |    |  7  |  8  |  9  |  0  |    =     |   |     |     | LEFT | DOWN | RIGHT | SHFT/CAPW |
-//                     | ALT | CMD | CTL(ENT) |   | SPC | FN3 |  FN1 |
-                        bindings = <
+
+			bindings = <
    &none   &kp GRAVE  		&kp N1  	&kp N2  	&kp N3    	&kp EQUAL    		&none		&none		&bdel  		&none		&kp ESC   	&none    
    &none   &kp PIPE  		&kp N4		&kp N5		&kp N6  	&kp MINUS  		&none		&kp COLON	&bspc_del  	&kp SQT		&kp BSLH	&none       
    &none   &kp LSHFT 		&kp N7		&kp N8		&kp N9		&kp N0			&none		&kp SEMI	&kp COMMA  	&kp DOT		&kp RSHFT	&none
@@ -342,29 +289,31 @@
                 };
 		
 		board_layer {
-// -----------------------------------------------------------------------------------------
-// |  |  |  	    |   |    | OUTPUT |   | BT1     | BT2   | BT3   | BT4   | BT5   | BT_CLR  |
-// |  |  |  	    | 	|    |        |   |         |       |       |       |       | OUT_TOG |
-// |  |  | BT CLEAR |  	|    |        |   |   	  |       |       |       |       |         |
-//                      | PWR_OFF  | PWR_OFF | PWR_TOG	| 	| 		  |       |       |
-                        bindings = <
-   &none   &none  &bt BT0 	&bt BT1	    &bt BT2  	&out OUT_TOG		&none 	&none		&none 	&none		&none			&none
-   &none   &none  &bt BT3	&bt BT4     &none	&none			&kp F1 		&kp F2   		&kp F3		&kp F4		&kp F5			&none	 
-   &none   &none  &bt BT_CLR  	&none       &none	&none			&kp F6		&kp F7   		&kp F8  	&kp F9		&kp F10			&none	 
-                                          &ext_power EP_OFF &ext_power EP_ON &ext_power EP_TOG  	&trans  	&trans  	&trans
+	
+			bindings = <
+   &none   &none  		&bt BT0 	&bt BT1	    	&bt BT2  	&out OUT_TOG		&none 		&none		&none 		&none		&none		&none
+   &none   &none  		&bt BT3		&bt BT4     	&none		&none			&kp F1 		&kp F2   	&kp F3		&kp F4		&kp F5		&none	 
+   &none   &none  		&bt BT_CLR  	&none       	&none		&none			&kp F6		&kp F7   	&kp F8  	&kp F9		&kp F10		&none	 
+                        			&none	    	&none   	&ext_power EP_TOG  	&trans  	&trans  	&trans
                         >;
                 };
 
 		os_layer {
-// -----------------------------------------------------------------------------------------
-// | ESC     | PRVS  | RWND  | PLAY  	| MFFD    | NEXT    |   | BT1     | BT2   | BT3   | BT4   | BT5   | BT_CLR  |
-// | RGB_TOG | BRI + | HUE + | SAT + 	| EFF +   | VOL+    |   |         |       |       |       |       | OUT_TOG |
-// |         | BRI - | HUE - | SAT - 	| EFF -   | VOL-    |   |   	  |       |       |       |       |         |
-//                           | PWR_OFF  | PWR_OFF | PWR_TOG	| 	| 		  |       |       |
+
                         bindings = <
    &none   &none  		&none  		&bt BT_PRV   	&bt BT_NXT   	&macro_switch		&none		&none		&none		&none		&none		&none
-   &none   &kp LG(LS(NUMBER_3)) &none  		&none		&none		&macro_windows		&none 		&kp C_VOL_UP   	&kp C_BRI_UP	&none		&none		&none	 
+   &none   &kp LG(LS(NUMBER_3)) &kp C_RW  	&kp C_PP	&kp C_FF	&macro_windows		&none 		&kp C_VOL_UP   	&kp C_BRI_UP	&none		&none		&none	 
    &none   &none  		&none	  	&none		&none		&none			&none		&kp C_VOL_DN   	&kp C_BRI_DN  	&none		&none		&none	 
+                                		&none 		&none 		&none  			&trans  	&trans  	&trans
+                        >;
+                };
+
+		fn_layer {
+
+                        bindings = <
+   &none   &none  		&kp F1 		&kp F2   	&kp F3   	&kp F10			&none		&kp PG_UP	&none		&none		&none		&none
+   &none   &none 		&kp F4		&kp F5		&kp F6		&kp F11			&none 		&kp PG_DN   	&none		&none		&none		&none	 
+   &none   &none  		&kp F7   	&kp F8  	&kp F9		&kp F12			&none		&none   	&none  		&none		&none		&none	 
                                 		&none 		&none 		&none  			&trans  	&trans  	&trans
                         >;
                 };
