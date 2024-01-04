@@ -66,14 +66,14 @@
          };
 
 	combo_mo4 {
-           timeout-ms = <150>;
+           timeout-ms = <75>;
            key-positions = <30 39>;
 	   layers = <0 1 2 3 4>;
            bindings = <&mo 4>;
          };
 
 	combo_mo5 {
-           timeout-ms = <150>;
+           timeout-ms = <75>;
            key-positions = <18 39>;
 	   layers = <0 1 2 3 4>;
            bindings = <&mo 5>;
@@ -234,12 +234,13 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-	ht_b: holdtap_balanced {
+	ht_t: holdtap_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP"; 
             #binding-cells = <2>;
-            tapping-term-ms = <650>;
-            flavor = "hold-preferred";
+            tapping-term-ms = <350>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
 
@@ -263,7 +264,7 @@
                         bindings = <
    &none   &kp Q    		&kp W    	&kp E       	&kp R      	&kp T          		&kp Y   	&kp U    	&kp I       	&kp O    	&kp P 		&none
    &none   &hm LSHIFT A    	&kp S    	&ht_hl 1 D     	&hm LGUI F      &kp G          		&kp H   	&kp J    	&kp K       	&kp L    	&kp FSLH  	&none
-   &none   &hm LSHIFT Z    	&kp X    	&kp C       	&kp V      	&kp B          		&kp N   	&kp M    	&kp COMMA   	&kp DOT  	&sk RSHFT   	&none
+   &none   &ht_t LSHIFT Z    	&kp X    	&kp C       	&kp V      	&kp B          		&kp N   	&kp M    	&kp COMMA   	&kp DOT  	&sk RSHFT   	&none
                                 		&td_esc	   	&mt LGUI TAB  	&mt LCTRL RET  		&lt 2 SPACE	&lt 1 TAB	&kp CAPS 
                         >;
                 };
