@@ -58,13 +58,20 @@
            bindings = <&kp LS(Z)>;
          };
          
-        combo_tog3 {
+        combo_mo3 {
            timeout-ms = <300>;
            key-positions = <39 40 41>;
-	   layers = <0 1 2>;
+	   layers = <0 1 2 3>;
            bindings = <&mo 3>;
          };
-         
+
+	combo_mo4 {
+           timeout-ms = <300>;
+           key-positions = <30 39>;
+	   layers = <0 1 2 3>;
+           bindings = <&mo 4>;
+         };
+      
 	combo_lpar {
            timeout-ms = <100>;
            key-positions = <4 5>;
@@ -313,8 +320,8 @@
 // |  SHFT |  7  |  8  |  9  |  0  |    =     |   |     |     | LEFT | DOWN | RIGHT | SHFT/CAPW |
 //                     | ALT | CMD | CTL(ENT) |   | SPC | FN3 |  FN1 |
                         bindings = <
-   &none   &kp TILDE  		&kp EXCL	&kp AT   	&kp LA(N3)     	&kp EQUAL		&kp C_BRI_UP	&kp C_VOL_UP	&none	        &none		&none   		&none    
-   &none   &kp PIPE		&kp DLLR	&kp PRCNT  	&kp CARET   	&kp MINUS	  	&kp C_BRI_DN	&kp C_VOL_DN	&kp UP		&none		&none			&none       	
+   &none   &kp TILDE  		&kp EXCL	&kp AT   	&kp LA(N3)     	&kp LA(EQUAL)		&kp C_BRI_UP	&kp C_VOL_UP	&none	        &none		&none   		&none    
+   &none   &kp PIPE		&kp DLLR	&kp PRCNT  	&kp CARET   	&kp LA(MINUS)	  	&kp C_BRI_DN	&kp C_VOL_DN	&kp UP		&none		&none			&none       	
    &none   &ht_b LSHIFT GRAVE 	&kp AMPS  	&kp STAR	&kp CAPS	&kp DOT			&kp BSLH	&kp LEFT    	&kp DOWN	&kp RIGHT	&sk RSHFT		&none
                                 		&trans  	&trans		&trans			&trans   	&trans   	&kp C_EJECT
                         >;
@@ -327,8 +334,8 @@
 // |    |  7  |  8  |  9  |  0  |    =     |   |     |     | LEFT | DOWN | RIGHT | SHFT/CAPW |
 //                     | ALT | CMD | CTL(ENT) |   | SPC | FN3 |  FN1 |
                         bindings = <
-   &none   &kp GRAVE  		&kp N1  	&kp N2  	&kp N3    	&kp EQUAL    		&macro_switch	&none		&bdel  		&none		&kp LG(LS(NUMBER_3))   	&none    
-   &none   &kp PIPE  		&kp N4		&kp N5		&kp N6  	&kp MINUS  		&macro_windows	&kp COLON	&bspc_del  	&kp SQT		&kp BSLH		&none       
+   &none   &kp GRAVE  		&kp N1  	&kp N2  	&kp N3    	&kp EQUAL    		&kp C_VOL_UP	&none		&bdel  		&none		&kp LG(LS(NUMBER_3))   	&none    
+   &none   &kp PIPE  		&kp N4		&kp N5		&kp N6  	&kp MINUS  		&kp C_VOL_DN	&kp COLON	&bspc_del  	&kp SQT		&kp BSLH		&none       
    &none   &kp LSHFT 		&kp N7		&kp N8		&kp N9		&kp N0			&none		&kp SEMI	&kp COMMA  	&kp DOT		&kp RSHFT		&none
                                 		&trans  	&trans		&trans			&trans   	&trans  	&caps_word
                         >;
@@ -336,15 +343,29 @@
 		
 		board_layer {
 // -----------------------------------------------------------------------------------------
-// | ESC     | PRVS  | RWND  | PLAY  	| MFFD    | NEXT    |   | BT1     | BT2   | BT3   | BT4   | BT5   | BT_CLR  |
-// | RGB_TOG | BRI + | HUE + | SAT + 	| EFF +   | VOL+    |   |         |       |       |       |       | OUT_TOG |
-// |         | BRI - | HUE - | SAT - 	| EFF -   | VOL-    |   |   	  |       |       |       |       |         |
-//                           | PWR_OFF  | PWR_OFF | PWR_TOG	| 	| 		  |       |       |
+// |  |  |  	    |   |    | OUTPUT |   | BT1     | BT2   | BT3   | BT4   | BT5   | BT_CLR  |
+// |  |  |  	    | 	|    |        |   |         |       |       |       |       | OUT_TOG |
+// |  |  | BT CLEAR |  	|    |        |   |   	  |       |       |       |       |         |
+//                      | PWR_OFF  | PWR_OFF | PWR_TOG	| 	| 		  |       |       |
                         bindings = <
    &none   &none  &none  	&none   &none   &out OUT_TOG		&bt BT0 	&bt BT1			&bt BT2 	&bt BT3		&bt BT4			&none
    &none   &none  &none  	&none   &none	&none			&kp F1 		&kp F2   		&kp F3		&kp F4		&kp F5			&none	 
    &none   &none  &bt BT_CLR  	&none   &none	&none			&kp F6		&kp F7   		&kp F8  	&kp F9		&kp F10			&none	 
                                           &ext_power EP_OFF &ext_power EP_ON &ext_power EP_TOG  	&trans  	&trans  	&trans
+                        >;
+                };
+
+		macro_layer {
+// -----------------------------------------------------------------------------------------
+// | ESC     | PRVS  | RWND  | PLAY  	| MFFD    | NEXT    |   | BT1     | BT2   | BT3   | BT4   | BT5   | BT_CLR  |
+// | RGB_TOG | BRI + | HUE + | SAT + 	| EFF +   | VOL+    |   |         |       |       |       |       | OUT_TOG |
+// |         | BRI - | HUE - | SAT - 	| EFF -   | VOL-    |   |   	  |       |       |       |       |         |
+//                           | PWR_OFF  | PWR_OFF | PWR_TOG	| 	| 		  |       |       |
+                        bindings = <
+   &none   &none  &none  	&bt BT_PRV   	&bt BT_NXT   	&macro_switch		&none		&none		&none		&none		&none		&none
+   &none   &none  &none  	&kp C_BRI_UP	&kp C_VOL_UP	&macro_windows		&none 		&kp C_VOL_UP   	&kp C_BRI_UP	&none		&none		&none	 
+   &none   &none  &bt BT_CLR  	&kp C_BRI_DN	&kp C_VOL_DN	&none			&none		&kp C_VOL_DN   	&kp C_BRI_DN  	&none		&none		&none	 
+                                &none 		&none 		&none  			&trans  	&trans  	&trans
                         >;
                 };
 		
