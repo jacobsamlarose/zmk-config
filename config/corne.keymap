@@ -64,7 +64,14 @@
 	   layers = <0 1 2>;
            bindings = <&sk LSHIFT>;
          };
-         
+
+	combo_alt_lshft {
+           timeout-ms = <200>;
+           key-positions = <4 16>;
+	   layers = <0 1 2>;
+           bindings = <&sk LSHIFT>;
+         };
+
         combo_mo3 {
            timeout-ms = <300>;
            key-positions = <39 40 41>;
