@@ -128,13 +128,6 @@
 	   layers = <0>;
 	   bindings = <&kp SEMI>;
 	 };
-
-	combo_the {
-	   timeout-ms = <30>;
-	   layers = <0>;
-	   key-positions = <4 16>;
-	   bindings = <&macro_the>;
-	 };
 	
 	combo_slideover {
 	   timeout-ms = <30>;
@@ -202,12 +195,6 @@
                 ;
         };
 
-	ZMK_MACRO(macro_the,
-            wait-ms = <30>;
-	    tap-ms = <40>;
-            bindings = <&kp T &kp H &kp E &kp SPACE>;
-    	)
-
 	bdel: backdelete {
             compatible = "zmk,behavior-mod-morph";
             label      = "BACK_DEL";
@@ -238,7 +225,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP"; 
             #binding-cells = <2>;
-            tapping-term-ms = <170>;
+            tapping-term-ms = <160>;
 	    quick-tap-ms = <200>;
     	    require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
