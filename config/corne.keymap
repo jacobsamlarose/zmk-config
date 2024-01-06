@@ -60,13 +60,6 @@
 
 	combo_lshft {
            timeout-ms = <200>;
-           key-positions = <15 16>;
-	   layers = <0 1 2>;
-           bindings = <&sk LSHIFT>;
-         };
-
-	combo_alt_lshft {
-           timeout-ms = <200>;
            key-positions = <4 16>;
 	   layers = <0 1 2>;
            bindings = <&sk LSHIFT>;
