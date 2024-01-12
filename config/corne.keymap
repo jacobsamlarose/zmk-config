@@ -65,6 +65,13 @@
            bindings = <&sk LSHIFT>;
          };
 
+	combo_lshft_alt {
+           timeout-ms = <200>;
+           key-positions = <3 15>;
+	   layers = <0 1 2>;
+           bindings = <&sk LSHIFT>;
+         };
+
         combo_mo3 {
            timeout-ms = <300>;
            key-positions = <39 40 41>;
@@ -232,7 +239,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP"; 
             #binding-cells = <2>;
-            tapping-term-ms = <160>;
+            tapping-term-ms = <150>;
 	    quick-tap-ms = <200>;
     	    require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
