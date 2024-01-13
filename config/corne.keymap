@@ -281,9 +281,9 @@
 		nav_layer {
 
                         bindings = <
-   &none   &kp TILDE  		&kp EXCL	&kp AT   	&kp LA(N3)     	&kp DOT			&none		&none		&none	        &none		&none   	&none    
-   &none   &kp PIPE		&kp DLLR	&kp PRCNT  	&kp CARET   	&kp LA(MINUS)		&none 		&kp HOME	&kp UP		&kp END		&none		&none       	
-   &none   &hm LSHIFT GRAVE 	&kp AMPS  	&kp STAR	&kp CAPS	&kp LA(EQUAL)		&none		&kp LEFT    	&kp DOWN	&kp RIGHT	&sk RSHFT	&none
+   &none   &kp TILDE  		&kp EXCL	&kp AT   	&kp LA(N3)     	&kp LA(MINUS)		&none		&none		&none	        &none		&none   	&none    
+   &none   &kp PIPE		&kp DLLR	&kp PRCNT  	&kp CARET   	&kp LA(EQUAL)		&none 		&kp HOME	&kp UP		&kp END		&none		&none       	
+   &none   &hm LSHIFT GRAVE 	&kp AMPS  	&kp STAR	&kp CAPS	&kp DOT			&none		&kp LEFT    	&kp DOWN	&kp RIGHT	&sk RSHFT	&none
                                 		&trans  	&trans		&trans			&trans   	&trans   	&kp C_EJECT
                         >;
                 };
@@ -291,9 +291,9 @@
 		num_layer {
 
 			bindings = <
-   &none   &kp GRAVE  		&kp N1  	&kp N2  	&kp N3    	&kp N0    		&none		&none		&bdel  		&none		&kp ESC   	&none    
-   &none   &kp PIPE  		&kp N4		&kp N5		&kp N6  	&kp MINUS  		&mo 5		&kp COLON	&bspc_del  	&kp SQT		&kp BSLH	&none       
-   &none   &kp LSHFT 		&kp N7		&kp N8		&kp N9		&kp EQUAL		&mo 4		&kp SEMI	&kp COMMA  	&kp DOT		&kp RSHFT	&none
+   &none   &kp GRAVE  		&kp N1  	&kp N2  	&kp N3    	&kp MINUS    		&none		&none		&bdel  		&none		&kp ESC   	&none    
+   &none   &kp N0  		&kp N4		&kp N5		&kp N6  	&kp EQUAL  		&mo 5		&kp COLON	&bspc_del  	&kp SQT		&kp BSLH	&none       
+   &none   &kp LSHFT 		&kp N7		&kp N8		&kp N9		&kp PIPE		&mo 4		&kp SEMI	&kp COMMA  	&kp DOT		&kp RSHFT	&none
                                 		&trans  	&trans		&trans			&trans   	&trans  	&caps_word
                         >;
                 };
@@ -301,9 +301,9 @@
 		board_layer {
 	
 			bindings = <
-   &none   &none  		&bt BT0 	&bt BT1	    	&bt BT2  	&out OUT_TOG		&none 		&none		&none 		&none		&none		&none
-   &none   &none  		&bt BT3		&bt BT4     	&none		&none			&kp F1 		&kp F2   	&kp F3		&kp F4		&kp F5		&none	 
-   &none   &none  		&bt BT_CLR  	&none       	&none		&none			&kp F6		&kp F7   	&kp F8  	&kp F9		&kp F10		&none	 
+   &none   &bt BT0		&bt BT1	    	&bt BT2  	&bt BT3		&bt BT4			&none 		&none		&none 		&none		&none		&none
+   &none   &none  		&none		&none     	&bt BT_PRV	&bt BT_NXT		&kp F1 		&kp F2   	&kp F3		&kp F4		&kp F5		&none	 
+   &none   &none  		&bt BT_CLR  	&none       	&out OUT_TOG	&none			&kp F6		&kp F7   	&kp F8  	&kp F9		&kp F10		&none	 
                         			&none	    	&none   	&ext_power EP_TOG  	&trans  	&trans  	&trans
                         >;
                 };
@@ -321,9 +321,9 @@
 		fn_layer {
 
                         bindings = <
-   &none   &none  		&kp F1 		&kp F2   	&kp F3   	&kp F10			&none		&kp PG_UP	&none		&none		&none		&none
-   &none   &none 		&kp F4		&kp F5		&kp F6		&kp F11			&none 		&kp PG_DN   	&none		&none		&none		&none	 
-   &none   &none  		&kp F7   	&kp F8  	&kp F9		&kp F12			&none		&none   	&none  		&none		&none		&none	 
+   &none   &kp F1  		&kp F2 		&kp F3   	&kp F4   	&kp F5			&none		&kp PG_UP	&none		&none		&none		&none
+   &none   &kp F6 		&kp F7		&kp F8		&kp F9		&kp F10			&none 		&kp PG_DN   	&none		&none		&none		&none	 
+   &none   &kp F11  		&kp F12   	&none	  	&none		&none			&none		&none   	&none  		&none		&none		&none	 
                                 		&none 		&none 		&none  			&trans  	&trans  	&trans
                         >;
                 };
