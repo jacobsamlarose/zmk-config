@@ -121,7 +121,15 @@
 	   layers = <0>;
 	   bindings = <&kp SEMI>;
 	 };
-	
+
+	combo_colon {
+	   timeout-ms = <30>;
+	   key-positions = <19 31>;
+	   layers = <0>;
+	   bindings = <&kp COLON>;
+	 };
+
+
 	combo_slideover {
 	   timeout-ms = <30>;
 	   layers = <0>;
